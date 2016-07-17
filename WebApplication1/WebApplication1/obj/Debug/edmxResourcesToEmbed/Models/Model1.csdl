@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ParentCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Double" />
+    <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="rms_Authors_ISI">
+    <Key>
+      <PropertyRef Name="Authors_ISI_ID" />
+    </Key>
+    <Property Name="Authors_ISI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="WOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberOfAuthors" Type="Int32" />
+    <Property Name="AuthorshipOrder" Type="Int32" />
+    <Property Name="PublicationPoints" Type="Int32" />
+    <Property Name="ProjectNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CorrespondingAuthor" Type="Boolean" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Authors_NonISI">
+    <Key>
+      <PropertyRef Name="Authors_NonISI_ID" />
+    </Key>
+    <Property Name="Authors_NonISI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="DOI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CorrespondingAuthor" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_BookAuthors">
+    <Key>
+      <PropertyRef Name="BooksAuthors_ID" />
+    </Key>
+    <Property Name="BooksAuthors_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookNum" Type="Int32" Nullable="false" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Contribution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Books_Authored">
+    <Key>
+      <PropertyRef Name="Book_Authored_ID" />
+    </Key>
+    <Property Name="Book_Authored_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Authors" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="PublicationYear" Type="Int32" />
+    <Property Name="Publisher" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FundingYear" Type="Int32" />
+    <Property Name="Language" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="Completed" Type="Boolean" Nullable="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Books_Translated">
+    <Key>
+      <PropertyRef Name="Book_Translated_ID" />
+    </Key>
+    <Property Name="Book_Translated_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PublicationYear" Type="Int32" />
+    <Property Name="Publisher" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="OriginalTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OriginalAuthors" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_BookTranslators">
+    <Key>
+      <PropertyRef Name="Book_Translated_ID" />
+    </Key>
+    <Property Name="Book_Translated_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookNum" Type="Int32" Nullable="false" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Conferences">
+    <Key>
+      <PropertyRef Name="Conference_ID" />
+    </Key>
+    <Property Name="Conference_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="ConfName" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="ConfLocation" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="PaperPresentation" Type="Int32" />
+    <Property Name="PaperTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Authors" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="Affiliation" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Departments">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deptartment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="College" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Colg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_GraduateStudents">
+    <Key>
+      <PropertyRef Name="GraduateStudentID" />
+    </Key>
+    <Property Name="GraduateStudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="AdvisorID" Type="Int32" />
+    <Property Name="StudentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StudentDept" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Degree" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Major" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Level" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Classification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Full_Part_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="ThesisTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ThesisStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LevelGPA" Type="Int32" />
+    <Property Name="NumberOfActiveTerms" Type="Int32" />
+    <Property Name="GraduationTerm" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_KeynoteSpeakers">
+    <Key>
+      <PropertyRef Name="KeynoteSpeaker_ID" />
+    </Key>
+    <Property Name="KeynoteSpeaker_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="ConferenceTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConferenceLocation" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Misc_Countries">
+    <Key>
+      <PropertyRef Name="Country_ID" />
+    </Key>
+    <Property Name="Country_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Misc_Nationality">
+    <Key>
+      <PropertyRef Name="Nationality_ID" />
+    </Key>
+    <Property Name="Nationality_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NationalityText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_PatentApplicants">
+    <Key>
+      <PropertyRef Name="PatentApplicant_ID" />
+    </Key>
+    <Property Name="PatentApplicant_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppliedPatentNumber" Type="Int32" Nullable="false" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_PatentInventors">
+    <Key>
+      <PropertyRef Name="PatentInventor_ID" />
+    </Key>
+    <Property Name="PatentInventor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatentNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Patents_Applied">
+    <Key>
+      <PropertyRef Name="Patent_Applied_ID" />
+    </Key>
+    <Property Name="Patent_Applied_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppliedPatentNumber" Type="Int32" Nullable="false" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FilledBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FillingDate" Type="DateTime" Precision="3" />
+    <Property Name="AttorneyDocketNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PatentApplicationTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationPatentNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Patents_Issued">
+    <Key>
+      <PropertyRef Name="Patent_Issued_ID" />
+    </Key>
+    <Property Name="Patent_Issued_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatentNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatentTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="YearOfIssue" Type="Int32" />
+    <Property Name="OwnershipOfPatent" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PatentGrantingAuthority" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProjectType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="ExtendedDate" Type="DateTime" Precision="3" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="AcademicYear" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBudget" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProjectStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Proposal_ID" Type="Int32" Nullable="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Projects_Manpower">
+    <Key>
+      <PropertyRef Name="Project_Manpower_ID" />
+    </Key>
+    <Property Name="Project_Manpower_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AllocatedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Projects_ManPower_Details">
+    <Key>
+      <PropertyRef Name="Project_ManPower_Detail_ID" />
+    </Key>
+    <Property Name="Project_ManPower_Detail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectNo" Type="Int32" Nullable="false" />
+    <Property Name="ReceivedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ListItemID" Type="Int32" />
+    <Property Name="Method" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Projects_Publications">
+    <Key>
+      <PropertyRef Name="Project_Publication_ID" />
+    </Key>
+    <Property Name="Project_Publication_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProjectNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FundType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Proposals">
+    <Key>
+      <PropertyRef Name="Proposal_ID" />
+    </Key>
+    <Property Name="Proposal_ID" Type="Int32" Nullable="false" />
+    <Property Name="ProposalCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrincipalInvestigator" Type="Int32" />
+    <Property Name="ProposalTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Semester" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RequestedBudget" Type="Int32" />
+    <Property Name="ChairmanApproval" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ChairmanComments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsEvaluationCompleted" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Project_ID" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Publications_ISI">
+    <Key>
+      <PropertyRef Name="Publication_ISI_ID" />
+    </Key>
+    <Property Name="Publication_ISI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ISICategory" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WOSNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Authors" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PaperTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Abstract" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConferenceTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConferenceDates" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConferenceLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ReprintAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FundingAgnecy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FundingText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCited" Type="Int32" />
+    <Property Name="Publisher" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ISSN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PublicationDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicationMonth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PublicationYear" Type="Double" />
+    <Property Name="Volume" Type="Double" />
+    <Property Name="Issue" Type="Double" />
+    <Property Name="WideCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ImpactFactorLastYear" Type="Int32" />
+    <Property Name="ImpactFactorPublicationYear" Type="Int32" />
+    <Property Name="QClass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Publications_NonISI">
+    <Key>
+      <PropertyRef Name="Publications_NonISI_ID" />
+    </Key>
+    <Property Name="Publications_NonISI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Authors" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PaperTitle" Type="String" MaxLength="999" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="999" FixedLength="false" Unicode="true" />
+    <Property Name="PublicationYear" Type="Int32" />
+    <Property Name="Approved" Type="Boolean" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Researchers">
+    <Key>
+      <PropertyRef Name="Researcher_ID" />
+    </Key>
+    <Property Name="Researcher_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AcademicRank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AdministrativeRank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ActualJob" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WOSResearcherID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="JoiningYear" Type="Int32" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_RIContributions">
+    <Key>
+      <PropertyRef Name="RIContribution_ID" />
+    </Key>
+    <Property Name="RIContribution_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RICenter" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_ScientificTrips">
+    <Key>
+      <PropertyRef Name="ScientificTrip_ID" />
+    </Key>
+    <Property Name="ScientificTrip_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TripNumber" Type="Int32" Nullable="false" />
+    <Property Name="ProjectCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="PersonUndetookTrip" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="NumberOfDays" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_ShortCourses">
+    <Key>
+      <PropertyRef Name="ShortCourse_ID" />
+    </Key>
+    <Property Name="ShortCourse_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Coordination" Type="Int32" />
+    <Property Name="SectionPresidency" Type="Int32" />
+    <Property Name="CompensationTime" Type="Int32" />
+    <Property Name="AverageCompensationTime" Type="Int32" />
+    <Property Name="TeachingHours" Type="Int32" />
+    <Property Name="Incentives" Type="Int32" />
+    <Property Name="Due" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Departments">
+    <Key>
+      <PropertyRef Name="Variation_Department_ID" />
+    </Key>
+    <Property Name="Variation_Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="OtherDeptarment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Variations_KFUPMIDs">
+    <Key>
+      <PropertyRef Name="Variation_KFUPMID_ID" />
+    </Key>
+    <Property Name="Variation_KFUPMID_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentKFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="OtherKFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Names">
+    <Key>
+      <PropertyRef Name="Variation_Name_ID" />
+    </Key>
+    <Property Name="Variation_Name_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Ranks">
+    <Key>
+      <PropertyRef Name="Variation_Rank_ID" />
+    </Key>
+    <Property Name="Variation_Rank_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KFUPMID" Type="Int32" Nullable="false" />
+    <Property Name="OtherRank" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="RMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="rms_Authors_ISI" EntityType="Self.rms_Authors_ISI" />
+    <EntitySet Name="rms_Authors_NonISI" EntityType="Self.rms_Authors_NonISI" />
+    <EntitySet Name="rms_BookAuthors" EntityType="Self.rms_BookAuthors" />
+    <EntitySet Name="rms_Books_Authored" EntityType="Self.rms_Books_Authored" />
+    <EntitySet Name="rms_Books_Translated" EntityType="Self.rms_Books_Translated" />
+    <EntitySet Name="rms_BookTranslators" EntityType="Self.rms_BookTranslators" />
+    <EntitySet Name="rms_Conferences" EntityType="Self.rms_Conferences" />
+    <EntitySet Name="rms_Departments" EntityType="Self.rms_Departments" />
+    <EntitySet Name="rms_GraduateStudents" EntityType="Self.rms_GraduateStudents" />
+    <EntitySet Name="rms_KeynoteSpeakers" EntityType="Self.rms_KeynoteSpeakers" />
+    <EntitySet Name="rms_Misc_Countries" EntityType="Self.rms_Misc_Countries" />
+    <EntitySet Name="rms_Misc_Nationality" EntityType="Self.rms_Misc_Nationality" />
+    <EntitySet Name="rms_PatentApplicants" EntityType="Self.rms_PatentApplicants" />
+    <EntitySet Name="rms_PatentInventors" EntityType="Self.rms_PatentInventors" />
+    <EntitySet Name="rms_Patents_Applied" EntityType="Self.rms_Patents_Applied" />
+    <EntitySet Name="rms_Patents_Issued" EntityType="Self.rms_Patents_Issued" />
+    <EntitySet Name="rms_Projects" EntityType="Self.rms_Projects" />
+    <EntitySet Name="rms_Projects_Manpower" EntityType="Self.rms_Projects_Manpower" />
+    <EntitySet Name="rms_Projects_ManPower_Details" EntityType="Self.rms_Projects_ManPower_Details" />
+    <EntitySet Name="rms_Projects_Publications" EntityType="Self.rms_Projects_Publications" />
+    <EntitySet Name="rms_Proposals" EntityType="Self.rms_Proposals" />
+    <EntitySet Name="rms_Publications_ISI" EntityType="Self.rms_Publications_ISI" />
+    <EntitySet Name="rms_Publications_NonISI" EntityType="Self.rms_Publications_NonISI" />
+    <EntitySet Name="rms_Researchers" EntityType="Self.rms_Researchers" />
+    <EntitySet Name="rms_RIContributions" EntityType="Self.rms_RIContributions" />
+    <EntitySet Name="rms_ScientificTrips" EntityType="Self.rms_ScientificTrips" />
+    <EntitySet Name="rms_ShortCourses" EntityType="Self.rms_ShortCourses" />
+    <EntitySet Name="rms_Variations_Departments" EntityType="Self.rms_Variations_Departments" />
+    <EntitySet Name="rms_Variations_KFUPMIDs" EntityType="Self.rms_Variations_KFUPMIDs" />
+    <EntitySet Name="rms_Variations_Names" EntityType="Self.rms_Variations_Names" />
+    <EntitySet Name="rms_Variations_Ranks" EntityType="Self.rms_Variations_Ranks" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <FunctionImport Name="GetDepartmentsByCollege">
+      <Parameter Name="college" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetPublicationsByColelge" ReturnType="Collection(String)">
+      <Parameter Name="college" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetAllColleges" ReturnType="Collection(RMSModel.sp_GetAllColleges_Result)" />
+    <FunctionImport Name="sp_GetBooksByCollege" ReturnType="Collection(RMSModel.sp_GetBooksByCollege_Result)">
+      <Parameter Name="college_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetBooksByFaculty" ReturnType="Collection(RMSModel.sp_GetBooksByFaculty_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetDepartmentsByCollege" ReturnType="Collection(RMSModel.sp_GetDepartmentsByCollege_Result)">
+      <Parameter Name="college_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetFacultyByCollege" ReturnType="Collection(RMSModel.sp_GetFacultyByCollege_Result)">
+      <Parameter Name="college_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetFacultyByDepartment" ReturnType="Collection(RMSModel.sp_GetFacultyByDepartment_Result)">
+      <Parameter Name="deptCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetISIPublicationsByCollege" ReturnType="Collection(RMSModel.sp_GetISIPublicationsByCollege_Result)">
+      <Parameter Name="college_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetISIPublicationsByFaculty" ReturnType="Collection(RMSModel.sp_GetISIPublicationsByFaculty_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetNonISIPublicationsByCollege" ReturnType="Collection(RMSModel.sp_GetNonISIPublicationsByCollege_Result)">
+      <Parameter Name="college_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetNonISIPublicationsByFaculty" ReturnType="Collection(RMSModel.sp_GetNonISIPublicationsByFaculty_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(RMSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(RMSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SummaryAll" ReturnType="Collection(RMSModel.sp_SummaryAll_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SummaryByFaculty" ReturnType="Collection(RMSModel.sp_SummaryByFaculty_Result)">
+      <Parameter Name="start_year" Mode="In" Type="Int32" />
+      <Parameter Name="end_year" Mode="In" Type="Int32" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SummaryAll" ReturnType="Collection(RMSModel.SummaryAll_Result)">
+      <Parameter Name="start_year" Mode="In" Type="Int32" />
+      <Parameter Name="end_year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SummaryByFaculty" ReturnType="Collection(RMSModel.SummaryByFaculty_Result)">
+      <Parameter Name="start_year" Mode="In" Type="Int32" />
+      <Parameter Name="end_year" Mode="In" Type="Int32" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_GetAllColleges_Result">
+    <Property Type="String" Name="DepartmentCode" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DepartmentName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_GetBooksByCollege_Result">
+    <Property Type="Int32" Name="Book_Authored_ID" Nullable="false" />
+    <Property Type="String" Name="BookTitle" Nullable="false" MaxLength="999" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="999" />
+    <Property Type="Int32" Name="PublicationYear" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" MaxLength="999" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="999" />
+    <Property Type="String" Name="ProjectNo" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="FundingYear" Nullable="true" />
+    <Property Type="String" Name="Language" Nullable="true" MaxLength="999" />
+    <Property Type="Boolean" Name="Completed" Nullable="false" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetBooksByFaculty_Result">
+    <Property Type="Int32" Name="BooksAuthors_ID" Nullable="false" />
+    <Property Type="Int32" Name="BookNum" Nullable="false" />
+    <Property Type="Int32" Name="KFUPMID" Nullable="false" />
+    <Property Type="String" Name="Contribution" Nullable="true" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Book_Authored_ID" Nullable="false" />
+    <Property Type="String" Name="BookTitle" Nullable="false" MaxLength="999" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="999" />
+    <Property Type="Int32" Name="PublicationYear" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" MaxLength="999" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="999" />
+    <Property Type="String" Name="ProjectNo" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="FundingYear" Nullable="true" />
+    <Property Type="String" Name="Language" Nullable="true" MaxLength="999" />
+    <Property Type="Boolean" Name="Completed" Nullable="false" />
+    <Property Type="Boolean" Name="isDeleted1" Nullable="true" />
+    <Property Type="Boolean" Name="isActive1" Nullable="true" />
+    <Property Type="String" Name="CreatedBy1" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn1" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDepartmentsByCollege_Result">
+    <Property Type="String" Name="DepartmentCode" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DepartmentName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_GetFacultyByCollege_Result">
+    <Property Type="Int32" Name="Researcher_ID" Nullable="false" />
+    <Property Type="Int32" Name="KFUPMID" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DepartmentCode" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AcademicRank" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AdministrativeRank" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ActualJob" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="UserID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="WOSResearcherID" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="JoiningYear" Nullable="true" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Phone" Nullable="true" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetFacultyByDepartment_Result">
+    <Property Type="Int32" Name="Researcher_ID" Nullable="false" />
+    <Property Type="Int32" Name="KFUPMID" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DepartmentCode" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AcademicRank" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AdministrativeRank" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ActualJob" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="UserID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="WOSResearcherID" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="JoiningYear" Nullable="true" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Phone" Nullable="true" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetISIPublicationsByCollege_Result">
+    <Property Type="Int32" Name="Publication_ISI_ID" Nullable="false" />
+    <Property Type="String" Name="ISICategory" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="WOSNum" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PaperTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Language" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Abstract" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DocumentType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceDates" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceLocation" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Keywords" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AuthorAddress" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ReprintAddress" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FundingAgnecy" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FundingText" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="TimeCited" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ISSN" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="PublicationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PublicationMonth" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PublicationYear" Nullable="true" />
+    <Property Type="Double" Name="Volume" Nullable="true" />
+    <Property Type="Double" Name="Issue" Nullable="true" />
+    <Property Type="String" Name="WideCategory" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SubjectCategory" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ImpactFactorLastYear" Nullable="true" />
+    <Property Type="Int32" Name="ImpactFactorPublicationYear" Nullable="true" />
+    <Property Type="String" Name="QClass" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetISIPublicationsByFaculty_Result">
+    <Property Type="Int32" Name="Authors_ISI_ID" Nullable="false" />
+    <Property Type="Int32" Name="KFUPMID" Nullable="false" />
+    <Property Type="String" Name="WOS" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="NumberOfAuthors" Nullable="true" />
+    <Property Type="Int32" Name="AuthorshipOrder" Nullable="true" />
+    <Property Type="Int32" Name="PublicationPoints" Nullable="true" />
+    <Property Type="String" Name="ProjectNo" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="CorrespondingAuthor" Nullable="false" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Publication_ISI_ID" Nullable="false" />
+    <Property Type="String" Name="ISICategory" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="WOSNum" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PaperTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Language" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Abstract" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DocumentType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceDates" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ConferenceLocation" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Keywords" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AuthorAddress" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ReprintAddress" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FundingAgnecy" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FundingText" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="TimeCited" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ISSN" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="PublicationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PublicationMonth" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PublicationYear" Nullable="true" />
+    <Property Type="Double" Name="Volume" Nullable="true" />
+    <Property Type="Double" Name="Issue" Nullable="true" />
+    <Property Type="String" Name="WideCategory" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SubjectCategory" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ImpactFactorLastYear" Nullable="true" />
+    <Property Type="Int32" Name="ImpactFactorPublicationYear" Nullable="true" />
+    <Property Type="String" Name="QClass" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted1" Nullable="true" />
+    <Property Type="Boolean" Name="isActive1" Nullable="true" />
+    <Property Type="String" Name="CreatedBy1" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn1" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetNonISIPublicationsByCollege_Result">
+    <Property Type="Int32" Name="Publications_NonISI_ID" Nullable="false" />
+    <Property Type="String" Name="DOI" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PaperTitle" Nullable="false" MaxLength="999" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="999" />
+    <Property Type="Int32" Name="PublicationYear" Nullable="true" />
+    <Property Type="Boolean" Name="Approved" Nullable="false" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetNonISIPublicationsByFaculty_Result">
+    <Property Type="Int32" Name="Authors_NonISI_ID" Nullable="false" />
+    <Property Type="Int32" Name="KFUPMID" Nullable="false" />
+    <Property Type="String" Name="DOI" Nullable="false" MaxLength="255" />
+    <Property Type="Boolean" Name="CorrespondingAuthor" Nullable="true" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Publications_NonISI_ID" Nullable="false" />
+    <Property Type="String" Name="DOI1" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Authors" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="PaperTitle" Nullable="false" MaxLength="999" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="999" />
+    <Property Type="Int32" Name="PublicationYear" Nullable="true" />
+    <Property Type="Boolean" Name="Approved" Nullable="false" />
+    <Property Type="String" Name="Remarks1" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted1" Nullable="true" />
+    <Property Type="Boolean" Name="isActive1" Nullable="true" />
+    <Property Type="String" Name="CreatedBy1" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="CreatedOn1" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_SummaryAll_Result">
+    <Property Type="Int32" Name="ISI_Publications" Nullable="true" />
+    <Property Type="Int32" Name="NonISI_Publications" Nullable="true" />
+    <Property Type="Int32" Name="Publication_Points" Nullable="true" />
+    <Property Type="Int32" Name="Books" Nullable="true" />
+    <Property Type="Int32" Name="Conferences" Nullable="true" />
+    <Property Type="Int32" Name="Patents" Nullable="true" />
+    <Property Type="Int32" Name="Projects" Nullable="true" />
+    <Property Type="Decimal" Name="Project_Funds" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Short_Course_Funds" Nullable="true" />
+    <Property Type="Int32" Name="Graduate_Students" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SummaryByFaculty_Result">
+    <Property Type="Int32" Name="Year" Nullable="true" />
+    <Property Type="Int32" Name="Conferences" Nullable="false" />
+    <Property Type="Int32" Name="Books" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SummaryAll_Result">
+    <Property Type="Int32" Name="Year" Nullable="true" />
+    <Property Type="Int32" Name="Conferences" Nullable="false" />
+    <Property Type="Int32" Name="Books" Nullable="false" />
+    <Property Type="Int32" Name="ISI_Publications" Nullable="false" />
+    <Property Type="Int32" Name="NonISI_Publications" Nullable="false" />
+    <Property Type="Int32" Name="Graduate_Students" Nullable="false" />
+    <Property Type="Int32" Name="Projects" Nullable="false" />
+    <Property Type="Decimal" Name="Project_Funds" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Patents" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SummaryByFaculty_Result">
+    <Property Type="Int32" Name="Year" Nullable="true" />
+    <Property Type="Int32" Name="Conferences" Nullable="false" />
+    <Property Type="Int32" Name="Books" Nullable="false" />
+  </ComplexType>
+</Schema>

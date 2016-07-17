@@ -1,0 +1,231 @@
+#main-header{
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: #167d43;
+	color:white;
+	padding-left: 15px;
+}
+
+#search-bar{
+	margin-bottom:10px; 
+}
+
+/* #content > .panel > .panel-heading{
+	background-color: #0A5109;
+	color: white;
+} */
+#content > .panel > .panel-body > form > div > label{
+	text-align: left;
+}
+
+/* aspx */
+#sidebar-list > ul > .panel ul {
+	background-color:#70BA70;
+	list-style:none;
+	border-top:2px solid #0B3D21;
+}
+
+#sidebar-list > ul > .panel ul > li {
+	padding-left:20px;
+}
+
+#sidebar-list > ul > .panel ul > li{
+	border-top:1px solid green;
+	/* border-bottom:1px solid green; */
+}
+
+/*end*/
+
+#results > tbody > tr > td > .collapse{
+	border-top:1px solid #dddddd;
+	margin-top:5px;
+	padding-top:5px;
+}
+#results > tbody > tr > td > div{
+	font-size:85%;
+}
+.keywords > .label{
+	margin-right:5px;
+}
+#results > tbody > tr > td:first-line{
+	font-size: 120%;
+}
+#results > thead{
+	font-size: 120%;
+}
+#results-tab li{
+	list-style:none;
+	font-size:120%;
+}
+.list-bordered{
+	border-bottom:1px solid #aaaaaa;
+}
+.showmore{
+	font-size:80%;
+}
+
+#results > li{
+	cursor:pointer;
+}
+/* #sidebar-list > a:nth-child(2n) > li{
+	background-color:#98FF58;
+} */
+
+#sidebar-list{
+	/* border:1px solid green; */
+	background-color:#eeeeee;
+}
+
+#sidebar-list  li{
+	cursor:pointer;
+	padding:10px;
+	font-size:110%;
+}
+#sidebar-list > ul > li {
+	margin-top:5px;
+	background-color:#167d43;
+	/* border-top:1px solid green;
+	border-bottom:1px solid green; */
+}
+#sidebar-list > ul > .panel > .page{
+	border-left: 10px solid #34C76F;
+}
+
+#sidebar-list a{
+	color:white;
+}
+
+.breadcrumb{
+	/* background-color:#0B3D21; */
+	background-color:#444444;
+}
+.breadcrumb a{
+	color:white;
+}
+
+#sidebar-list > ul > .panel > li {
+	margin-top:5px;
+	background-color:#167d43;
+	/* border-bottom:2px solid #0B3D21; */
+}
+#sidebar-list > ul > .panel > ul {
+	background-color:#70BA70;
+	list-style:none;
+	border-top:2px solid #0B3D21;
+}
+
+#sidebar-list > ul > .panel > ul > li {
+	padding-left:20px;
+}
+
+#sidebar-list > ul > .panel > ul > li{
+	border-top:1px solid green;
+	/* border-bottom:1px solid green; */
+}
+
+
+
+#sidebar-list > ul > li:first-child{
+	/* margin-top:5px; */
+	background-color:#0B3D21;
+	font-size:120%;
+	font-weight:bold;
+	border-top:0;
+	margin-top:0;
+} 
+#sidebar-list > ul > ul {
+	background-color:#70BA70;
+	list-style:none;
+	border-top:2px solid #0B3D21;
+}
+
+#sidebar-list > ul > ul > li {
+	padding-left:20px;
+}
+#sidebar-list > ul > ul > li{
+	border-top:1px solid green;
+	/* border-bottom:1px solid green; */
+}
+
+#stats-table > thead > tr > th{
+	vertical-align:middle;
+	text-align:center;
+}
+svg{
+	width: 100% !important;
+ }
+#results_header{
+	 /* background-color:#0B5454; */
+	 background-color:#0B3D21;
+}
+#statistics h5{
+	color:#aaaaaa;
+}
+#statistics table td, #statistics table th{
+	text-align:center;
+	vertical-align:middle;
+}
+#statistics table th{
+	background-color: #167d43;
+	color:white;
+}
+
+/* Modal */
+.modal-body{	
+	overflow-y:auto;
+}
+
+.modal-dialog{
+	width:95%;
+	height:100%;
+	margin:auto;
+	padding-top:5px;
+	overflow-y: initial !important;
+}
+.modal-content{
+	/* height:100%; */
+	/* min-height:100%; */
+	border-radius:7px;
+}
+
+/* End: Modal */
+
+#id-form{
+	padding-bottom: 20px;
+	border-bottom:1px solid #eeeeee;
+}
+#update-form{
+	padding-top:20px;
+}
+
+.results-list > li > a:before{
+     content: "\00BB \0020";
+}
+.results-list > li > a[aria-expanded="true"]:before{
+     content: '\00BB \0020';
+}
+
+
+.result > li:hover{
+	cursor:pointer
+}
+#div_character_filter a:hover{
+	cursor:pointer;
+	color:green;
+}
+.facultyList a{
+	color:#237698
+}
+.facultyList a:hover{
+	color:#2C95BF	
+}
+.facultyList li{
+	padding-bottom:2.5px;
+	border-bottom: 1px solid #eeeeee;
+	margin-bottom: 2.5px;
+}
+
+.highcharts-container, .highcharts-background{
+	width: 100% !important;
+	height: 100% !important;
+	}

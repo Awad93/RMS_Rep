@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="ParentCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Level" Type="float" />
+    <Property Name="Type" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="rms_Authors_ISI">
+    <Key>
+      <PropertyRef Name="Authors_ISI_ID" />
+    </Key>
+    <Property Name="Authors_ISI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="WOS" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NumberOfAuthors" Type="int" />
+    <Property Name="AuthorshipOrder" Type="int" />
+    <Property Name="PublicationPoints" Type="int" />
+    <Property Name="ProjectNo" Type="varchar" MaxLength="255" />
+    <Property Name="CorrespondingAuthor" Type="bit" Nullable="false" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Authors_NonISI">
+    <Key>
+      <PropertyRef Name="Authors_NonISI_ID" />
+    </Key>
+    <Property Name="Authors_NonISI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="DOI" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CorrespondingAuthor" Type="bit" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_BookAuthors">
+    <Key>
+      <PropertyRef Name="BooksAuthors_ID" />
+    </Key>
+    <Property Name="BooksAuthors_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookNum" Type="int" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Contribution" Type="varchar(max)" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Books_Authored">
+    <Key>
+      <PropertyRef Name="Book_Authored_ID" />
+    </Key>
+    <Property Name="Book_Authored_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="Authors" Type="nvarchar" MaxLength="999" />
+    <Property Name="PublicationYear" Type="int" />
+    <Property Name="Publisher" Type="nvarchar" MaxLength="999" />
+    <Property Name="Country" Type="nvarchar" MaxLength="999" />
+    <Property Name="ProjectNo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FundingYear" Type="int" />
+    <Property Name="Language" Type="nvarchar" MaxLength="999" />
+    <Property Name="Completed" Type="bit" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Books_Translated">
+    <Key>
+      <PropertyRef Name="Book_Translated_ID" />
+    </Key>
+    <Property Name="Book_Translated_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="PublicationYear" Type="int" />
+    <Property Name="Publisher" Type="nvarchar" MaxLength="999" />
+    <Property Name="Country" Type="nvarchar" MaxLength="999" />
+    <Property Name="OriginalTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="OriginalAuthors" Type="nvarchar" MaxLength="999" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="999" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_BookTranslators">
+    <Key>
+      <PropertyRef Name="Book_Translated_ID" />
+    </Key>
+    <Property Name="Book_Translated_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookNum" Type="int" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Conferences">
+    <Key>
+      <PropertyRef Name="Conference_ID" />
+    </Key>
+    <Property Name="Conference_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="ConfName" Type="nvarchar" MaxLength="999" />
+    <Property Name="ConfLocation" Type="nvarchar" MaxLength="999" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="PaperPresentation" Type="int" />
+    <Property Name="PaperTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="Authors" Type="nvarchar" MaxLength="999" />
+    <Property Name="Affiliation" Type="nvarchar" MaxLength="999" />
+    <Property Name="ProjectNo" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Departments">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeptCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Deptartment" Type="varchar" MaxLength="255" />
+    <Property Name="College" Type="varchar" MaxLength="255" />
+    <Property Name="Colg" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_GraduateStudents">
+    <Key>
+      <PropertyRef Name="GraduateStudentID" />
+    </Key>
+    <Property Name="GraduateStudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="AdvisorID" Type="int" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="255" />
+    <Property Name="StudentDept" Type="varchar" MaxLength="255" />
+    <Property Name="Nationality" Type="varchar" MaxLength="255" />
+    <Property Name="Degree" Type="varchar" MaxLength="255" />
+    <Property Name="Major" Type="varchar" MaxLength="255" />
+    <Property Name="Level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Classification" Type="varchar" MaxLength="255" />
+    <Property Name="Full_Part_Type" Type="varchar" MaxLength="255" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="Year" Type="int" />
+    <Property Name="ThesisTitle" Type="varchar" MaxLength="255" />
+    <Property Name="ThesisStatus" Type="varchar" MaxLength="255" />
+    <Property Name="LevelGPA" Type="int" />
+    <Property Name="NumberOfActiveTerms" Type="int" />
+    <Property Name="GraduationTerm" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_KeynoteSpeakers">
+    <Key>
+      <PropertyRef Name="KeynoteSpeaker_ID" />
+    </Key>
+    <Property Name="KeynoteSpeaker_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="ConferenceTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="ConferenceLocation" Type="nvarchar" MaxLength="999" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Year" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Misc_Countries">
+    <Key>
+      <PropertyRef Name="Country_ID" />
+    </Key>
+    <Property Name="Country_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Misc_Nationality">
+    <Key>
+      <PropertyRef Name="Nationality_ID" />
+    </Key>
+    <Property Name="Nationality_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NationalityText" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_PatentApplicants">
+    <Key>
+      <PropertyRef Name="PatentApplicant_ID" />
+    </Key>
+    <Property Name="PatentApplicant_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppliedPatentNumber" Type="int" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_PatentInventors">
+    <Key>
+      <PropertyRef Name="PatentInventor_ID" />
+    </Key>
+    <Property Name="PatentInventor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatentNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Patents_Applied">
+    <Key>
+      <PropertyRef Name="Patent_Applied_ID" />
+    </Key>
+    <Property Name="Patent_Applied_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppliedPatentNumber" Type="int" Nullable="false" />
+    <Property Name="ReferenceNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FilledBy" Type="varchar" MaxLength="255" />
+    <Property Name="FillingDate" Type="datetime" />
+    <Property Name="AttorneyDocketNo" Type="varchar" MaxLength="255" />
+    <Property Name="PatentApplicationTitle" Type="varchar" MaxLength="255" />
+    <Property Name="ApplicationPatentNo" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Patents_Issued">
+    <Key>
+      <PropertyRef Name="Patent_Issued_ID" />
+    </Key>
+    <Property Name="Patent_Issued_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatentNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PatentTitle" Type="varchar" MaxLength="255" />
+    <Property Name="Country" Type="varchar" MaxLength="255" />
+    <Property Name="YearOfIssue" Type="int" />
+    <Property Name="OwnershipOfPatent" Type="varchar" MaxLength="255" />
+    <Property Name="PatentGrantingAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ProjectType" Type="varchar" MaxLength="255" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="ExtendedDate" Type="datetime" />
+    <Property Name="Year" Type="int" />
+    <Property Name="AcademicYear" Type="varchar" MaxLength="255" />
+    <Property Name="ApprovedBudget" Type="money" />
+    <Property Name="ProjectStatus" Type="varchar" MaxLength="255" />
+    <Property Name="Proposal_ID" Type="int" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Projects_Manpower">
+    <Key>
+      <PropertyRef Name="Project_Manpower_ID" />
+    </Key>
+    <Property Name="Project_Manpower_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="ProjectCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="255" />
+    <Property Name="AllocatedAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Projects_ManPower_Details">
+    <Key>
+      <PropertyRef Name="Project_ManPower_Detail_ID" />
+    </Key>
+    <Property Name="Project_ManPower_Detail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="ProjectNo" Type="int" Nullable="false" />
+    <Property Name="ReceivedAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="ListItemID" Type="int" />
+    <Property Name="Method" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Projects_Publications">
+    <Key>
+      <PropertyRef Name="Project_Publication_ID" />
+    </Key>
+    <Property Name="Project_Publication_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WOS" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ProjectNo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FundType" Type="varchar" MaxLength="255" />
+    <Property Name="ProjectType" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Proposals">
+    <Key>
+      <PropertyRef Name="Proposal_ID" />
+    </Key>
+    <Property Name="Proposal_ID" Type="int" Nullable="false" />
+    <Property Name="ProposalCode" Type="varchar" MaxLength="255" />
+    <Property Name="PrincipalInvestigator" Type="int" />
+    <Property Name="ProposalTitle" Type="varchar" MaxLength="255" />
+    <Property Name="ProjectType" Type="varchar" MaxLength="255" />
+    <Property Name="Semester" Type="varchar" MaxLength="255" />
+    <Property Name="Keywords" Type="varchar" MaxLength="255" />
+    <Property Name="StDate" Type="varchar" MaxLength="255" />
+    <Property Name="EndDate" Type="varchar" MaxLength="255" />
+    <Property Name="RequestedBudget" Type="int" />
+    <Property Name="ChairmanApproval" Type="varchar" MaxLength="255" />
+    <Property Name="ChairmanComments" Type="varchar" MaxLength="255" />
+    <Property Name="IsEvaluationCompleted" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="255" />
+    <Property Name="Project_ID" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Publications_ISI">
+    <Key>
+      <PropertyRef Name="Publication_ISI_ID" />
+    </Key>
+    <Property Name="Publication_ISI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISICategory" Type="varchar" MaxLength="255" />
+    <Property Name="WOSNum" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Authors" Type="varchar" MaxLength="255" />
+    <Property Name="PaperTitle" Type="varchar" MaxLength="255" />
+    <Property Name="Source" Type="varchar" MaxLength="255" />
+    <Property Name="Language" Type="varchar" MaxLength="255" />
+    <Property Name="Abstract" Type="varchar" MaxLength="255" />
+    <Property Name="DocumentType" Type="varchar" MaxLength="255" />
+    <Property Name="ConferenceTitle" Type="varchar" MaxLength="255" />
+    <Property Name="ConferenceDates" Type="varchar" MaxLength="255" />
+    <Property Name="ConferenceLocation" Type="varchar" MaxLength="255" />
+    <Property Name="Keywords" Type="varchar" MaxLength="255" />
+    <Property Name="AuthorAddress" Type="varchar" MaxLength="255" />
+    <Property Name="ReprintAddress" Type="varchar" MaxLength="255" />
+    <Property Name="FundingAgnecy" Type="varchar" MaxLength="255" />
+    <Property Name="FundingText" Type="varchar" MaxLength="255" />
+    <Property Name="TimeCited" Type="int" />
+    <Property Name="Publisher" Type="varchar" MaxLength="255" />
+    <Property Name="ISSN" Type="varchar" MaxLength="255" />
+    <Property Name="PublicationDate" Type="datetime" />
+    <Property Name="PublicationMonth" Type="varchar" MaxLength="255" />
+    <Property Name="PublicationYear" Type="float" />
+    <Property Name="Volume" Type="float" />
+    <Property Name="Issue" Type="float" />
+    <Property Name="WideCategory" Type="varchar" MaxLength="255" />
+    <Property Name="SubjectCategory" Type="varchar" MaxLength="255" />
+    <Property Name="ImpactFactorLastYear" Type="int" />
+    <Property Name="ImpactFactorPublicationYear" Type="int" />
+    <Property Name="QClass" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Publications_NonISI">
+    <Key>
+      <PropertyRef Name="Publications_NonISI_ID" />
+    </Key>
+    <Property Name="Publications_NonISI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOI" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Authors" Type="varchar" MaxLength="255" />
+    <Property Name="PaperTitle" Type="nvarchar" MaxLength="999" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="999" />
+    <Property Name="PublicationYear" Type="int" />
+    <Property Name="Approved" Type="bit" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Researchers">
+    <Key>
+      <PropertyRef Name="Researcher_ID" />
+    </Key>
+    <Property Name="Researcher_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="255" />
+    <Property Name="FullName" Type="varchar" MaxLength="255" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="255" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" />
+    <Property Name="DepartmentCode" Type="varchar" MaxLength="255" />
+    <Property Name="AcademicRank" Type="varchar" MaxLength="255" />
+    <Property Name="AdministrativeRank" Type="varchar" MaxLength="255" />
+    <Property Name="ActualJob" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="UserID" Type="varchar" MaxLength="255" />
+    <Property Name="WOSResearcherID" Type="varchar" MaxLength="255" />
+    <Property Name="JoiningYear" Type="int" />
+    <Property Name="JoiningDate" Type="datetime" />
+    <Property Name="Phone" Type="int" />
+    <Property Name="Nationality" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_RIContributions">
+    <Key>
+      <PropertyRef Name="RIContribution_ID" />
+    </Key>
+    <Property Name="RIContribution_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WOS" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="RICenter" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_ScientificTrips">
+    <Key>
+      <PropertyRef Name="ScientificTrip_ID" />
+    </Key>
+    <Property Name="ScientificTrip_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TripNumber" Type="int" Nullable="false" />
+    <Property Name="ProjectCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="PersonUndetookTrip" Type="varchar" MaxLength="255" />
+    <Property Name="Location" Type="varchar" MaxLength="255" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="NumberOfDays" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_ShortCourses">
+    <Key>
+      <PropertyRef Name="ShortCourse_ID" />
+    </Key>
+    <Property Name="ShortCourse_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Coordination" Type="int" />
+    <Property Name="SectionPresidency" Type="int" />
+    <Property Name="CompensationTime" Type="int" />
+    <Property Name="AverageCompensationTime" Type="int" />
+    <Property Name="TeachingHours" Type="int" />
+    <Property Name="Incentives" Type="int" />
+    <Property Name="Due" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Departments">
+    <Key>
+      <PropertyRef Name="Variation_Department_ID" />
+    </Key>
+    <Property Name="Variation_Department_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="OtherDeptarment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Variations_KFUPMIDs">
+    <Key>
+      <PropertyRef Name="Variation_KFUPMID_ID" />
+    </Key>
+    <Property Name="Variation_KFUPMID_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentKFUPMID" Type="int" Nullable="false" />
+    <Property Name="OtherKFUPMID" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Names">
+    <Key>
+      <PropertyRef Name="Variation_Name_ID" />
+    </Key>
+    <Property Name="Variation_Name_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rms_Variations_Ranks">
+    <Key>
+      <PropertyRef Name="Variation_Rank_ID" />
+    </Key>
+    <Property Name="Variation_Rank_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KFUPMID" Type="int" Nullable="false" />
+    <Property Name="OtherRank" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetDepartmentsByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetPublicationsByColelge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllColleges" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetBooksByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college_code" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetBooksByFaculty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDepartmentsByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college_code" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetFacultyByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college_code" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetFacultyByDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="deptCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetISIPublicationsByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college_code" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetISIPublicationsByFaculty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetNonISIPublicationsByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="college_code" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetNonISIPublicationsByFaculty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SummaryAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SummaryByFaculty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="start_year" Type="int" Mode="In" />
+    <Parameter Name="end_year" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SummaryAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="start_year" Type="int" Mode="In" />
+    <Parameter Name="end_year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SummaryByFaculty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="start_year" Type="int" Mode="In" />
+    <Parameter Name="end_year" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="RMSModelStoreContainer">
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Authors_ISI" EntityType="Self.rms_Authors_ISI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Authors_NonISI" EntityType="Self.rms_Authors_NonISI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_BookAuthors" EntityType="Self.rms_BookAuthors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Books_Authored" EntityType="Self.rms_Books_Authored" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Books_Translated" EntityType="Self.rms_Books_Translated" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_BookTranslators" EntityType="Self.rms_BookTranslators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Conferences" EntityType="Self.rms_Conferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Departments" EntityType="Self.rms_Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_GraduateStudents" EntityType="Self.rms_GraduateStudents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_KeynoteSpeakers" EntityType="Self.rms_KeynoteSpeakers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Misc_Countries" EntityType="Self.rms_Misc_Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Misc_Nationality" EntityType="Self.rms_Misc_Nationality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_PatentApplicants" EntityType="Self.rms_PatentApplicants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_PatentInventors" EntityType="Self.rms_PatentInventors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Patents_Applied" EntityType="Self.rms_Patents_Applied" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Patents_Issued" EntityType="Self.rms_Patents_Issued" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Projects" EntityType="Self.rms_Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Projects_Manpower" EntityType="Self.rms_Projects_Manpower" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Projects_ManPower_Details" EntityType="Self.rms_Projects_ManPower_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Projects_Publications" EntityType="Self.rms_Projects_Publications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Proposals" EntityType="Self.rms_Proposals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Publications_ISI" EntityType="Self.rms_Publications_ISI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Publications_NonISI" EntityType="Self.rms_Publications_NonISI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Researchers" EntityType="Self.rms_Researchers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_RIContributions" EntityType="Self.rms_RIContributions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_ScientificTrips" EntityType="Self.rms_ScientificTrips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_ShortCourses" EntityType="Self.rms_ShortCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Variations_Departments" EntityType="Self.rms_Variations_Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Variations_KFUPMIDs" EntityType="Self.rms_Variations_KFUPMIDs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Variations_Names" EntityType="Self.rms_Variations_Names" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rms_Variations_Ranks" EntityType="Self.rms_Variations_Ranks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

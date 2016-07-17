@@ -1,0 +1,928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RMSModelStoreContainer" CdmEntityContainer="RMSEntities">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="RMSModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Authors_ISI">
+      <EntityTypeMapping TypeName="RMSModel.rms_Authors_ISI">
+        <MappingFragment StoreEntitySet="rms_Authors_ISI">
+          <ScalarProperty Name="Authors_ISI_ID" ColumnName="Authors_ISI_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="WOS" ColumnName="WOS" />
+          <ScalarProperty Name="NumberOfAuthors" ColumnName="NumberOfAuthors" />
+          <ScalarProperty Name="AuthorshipOrder" ColumnName="AuthorshipOrder" />
+          <ScalarProperty Name="PublicationPoints" ColumnName="PublicationPoints" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="CorrespondingAuthor" ColumnName="CorrespondingAuthor" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Authors_NonISI">
+      <EntityTypeMapping TypeName="RMSModel.rms_Authors_NonISI">
+        <MappingFragment StoreEntitySet="rms_Authors_NonISI">
+          <ScalarProperty Name="Authors_NonISI_ID" ColumnName="Authors_NonISI_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="DOI" ColumnName="DOI" />
+          <ScalarProperty Name="CorrespondingAuthor" ColumnName="CorrespondingAuthor" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_BookAuthors">
+      <EntityTypeMapping TypeName="RMSModel.rms_BookAuthors">
+        <MappingFragment StoreEntitySet="rms_BookAuthors">
+          <ScalarProperty Name="BooksAuthors_ID" ColumnName="BooksAuthors_ID" />
+          <ScalarProperty Name="BookNum" ColumnName="BookNum" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Contribution" ColumnName="Contribution" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Books_Authored">
+      <EntityTypeMapping TypeName="RMSModel.rms_Books_Authored">
+        <MappingFragment StoreEntitySet="rms_Books_Authored">
+          <ScalarProperty Name="Book_Authored_ID" ColumnName="Book_Authored_ID" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="FundingYear" ColumnName="FundingYear" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Books_Translated">
+      <EntityTypeMapping TypeName="RMSModel.rms_Books_Translated">
+        <MappingFragment StoreEntitySet="rms_Books_Translated">
+          <ScalarProperty Name="Book_Translated_ID" ColumnName="Book_Translated_ID" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="OriginalTitle" ColumnName="OriginalTitle" />
+          <ScalarProperty Name="OriginalAuthors" ColumnName="OriginalAuthors" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_BookTranslators">
+      <EntityTypeMapping TypeName="RMSModel.rms_BookTranslators">
+        <MappingFragment StoreEntitySet="rms_BookTranslators">
+          <ScalarProperty Name="Book_Translated_ID" ColumnName="Book_Translated_ID" />
+          <ScalarProperty Name="BookNum" ColumnName="BookNum" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Conferences">
+      <EntityTypeMapping TypeName="RMSModel.rms_Conferences">
+        <MappingFragment StoreEntitySet="rms_Conferences">
+          <ScalarProperty Name="Conference_ID" ColumnName="Conference_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ConfName" ColumnName="ConfName" />
+          <ScalarProperty Name="ConfLocation" ColumnName="ConfLocation" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PaperPresentation" ColumnName="PaperPresentation" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="Affiliation" ColumnName="Affiliation" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Departments">
+      <EntityTypeMapping TypeName="RMSModel.rms_Departments">
+        <MappingFragment StoreEntitySet="rms_Departments">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="DeptCode" ColumnName="DeptCode" />
+          <ScalarProperty Name="Deptartment" ColumnName="Deptartment" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Colg" ColumnName="Colg" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_GraduateStudents">
+      <EntityTypeMapping TypeName="RMSModel.rms_GraduateStudents">
+        <MappingFragment StoreEntitySet="rms_GraduateStudents">
+          <ScalarProperty Name="GraduateStudentID" ColumnName="GraduateStudentID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="AdvisorID" ColumnName="AdvisorID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="StudentDept" ColumnName="StudentDept" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="Full_Part_Type" ColumnName="Full_Part_Type" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ThesisTitle" ColumnName="ThesisTitle" />
+          <ScalarProperty Name="ThesisStatus" ColumnName="ThesisStatus" />
+          <ScalarProperty Name="LevelGPA" ColumnName="LevelGPA" />
+          <ScalarProperty Name="NumberOfActiveTerms" ColumnName="NumberOfActiveTerms" />
+          <ScalarProperty Name="GraduationTerm" ColumnName="GraduationTerm" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_KeynoteSpeakers">
+      <EntityTypeMapping TypeName="RMSModel.rms_KeynoteSpeakers">
+        <MappingFragment StoreEntitySet="rms_KeynoteSpeakers">
+          <ScalarProperty Name="KeynoteSpeaker_ID" ColumnName="KeynoteSpeaker_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="ConferenceTitle" ColumnName="ConferenceTitle" />
+          <ScalarProperty Name="ConferenceLocation" ColumnName="ConferenceLocation" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Misc_Countries">
+      <EntityTypeMapping TypeName="RMSModel.rms_Misc_Countries">
+        <MappingFragment StoreEntitySet="rms_Misc_Countries">
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Misc_Nationality">
+      <EntityTypeMapping TypeName="RMSModel.rms_Misc_Nationality">
+        <MappingFragment StoreEntitySet="rms_Misc_Nationality">
+          <ScalarProperty Name="Nationality_ID" ColumnName="Nationality_ID" />
+          <ScalarProperty Name="NationalityText" ColumnName="NationalityText" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_PatentApplicants">
+      <EntityTypeMapping TypeName="RMSModel.rms_PatentApplicants">
+        <MappingFragment StoreEntitySet="rms_PatentApplicants">
+          <ScalarProperty Name="PatentApplicant_ID" ColumnName="PatentApplicant_ID" />
+          <ScalarProperty Name="AppliedPatentNumber" ColumnName="AppliedPatentNumber" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_PatentInventors">
+      <EntityTypeMapping TypeName="RMSModel.rms_PatentInventors">
+        <MappingFragment StoreEntitySet="rms_PatentInventors">
+          <ScalarProperty Name="PatentInventor_ID" ColumnName="PatentInventor_ID" />
+          <ScalarProperty Name="PatentNumber" ColumnName="PatentNumber" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Patents_Applied">
+      <EntityTypeMapping TypeName="RMSModel.rms_Patents_Applied">
+        <MappingFragment StoreEntitySet="rms_Patents_Applied">
+          <ScalarProperty Name="Patent_Applied_ID" ColumnName="Patent_Applied_ID" />
+          <ScalarProperty Name="AppliedPatentNumber" ColumnName="AppliedPatentNumber" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="FilledBy" ColumnName="FilledBy" />
+          <ScalarProperty Name="FillingDate" ColumnName="FillingDate" />
+          <ScalarProperty Name="AttorneyDocketNo" ColumnName="AttorneyDocketNo" />
+          <ScalarProperty Name="PatentApplicationTitle" ColumnName="PatentApplicationTitle" />
+          <ScalarProperty Name="ApplicationPatentNo" ColumnName="ApplicationPatentNo" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Patents_Issued">
+      <EntityTypeMapping TypeName="RMSModel.rms_Patents_Issued">
+        <MappingFragment StoreEntitySet="rms_Patents_Issued">
+          <ScalarProperty Name="Patent_Issued_ID" ColumnName="Patent_Issued_ID" />
+          <ScalarProperty Name="PatentNumber" ColumnName="PatentNumber" />
+          <ScalarProperty Name="PatentTitle" ColumnName="PatentTitle" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="YearOfIssue" ColumnName="YearOfIssue" />
+          <ScalarProperty Name="OwnershipOfPatent" ColumnName="OwnershipOfPatent" />
+          <ScalarProperty Name="PatentGrantingAuthority" ColumnName="PatentGrantingAuthority" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Projects">
+      <EntityTypeMapping TypeName="RMSModel.rms_Projects">
+        <MappingFragment StoreEntitySet="rms_Projects">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ExtendedDate" ColumnName="ExtendedDate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="AcademicYear" ColumnName="AcademicYear" />
+          <ScalarProperty Name="ApprovedBudget" ColumnName="ApprovedBudget" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="Proposal_ID" ColumnName="Proposal_ID" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Projects_Manpower">
+      <EntityTypeMapping TypeName="RMSModel.rms_Projects_Manpower">
+        <MappingFragment StoreEntitySet="rms_Projects_Manpower">
+          <ScalarProperty Name="Project_Manpower_ID" ColumnName="Project_Manpower_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="AllocatedAmount" ColumnName="AllocatedAmount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Projects_ManPower_Details">
+      <EntityTypeMapping TypeName="RMSModel.rms_Projects_ManPower_Details">
+        <MappingFragment StoreEntitySet="rms_Projects_ManPower_Details">
+          <ScalarProperty Name="Project_ManPower_Detail_ID" ColumnName="Project_ManPower_Detail_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ListItemID" ColumnName="ListItemID" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Projects_Publications">
+      <EntityTypeMapping TypeName="RMSModel.rms_Projects_Publications">
+        <MappingFragment StoreEntitySet="rms_Projects_Publications">
+          <ScalarProperty Name="Project_Publication_ID" ColumnName="Project_Publication_ID" />
+          <ScalarProperty Name="WOS" ColumnName="WOS" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="FundType" ColumnName="FundType" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Proposals">
+      <EntityTypeMapping TypeName="RMSModel.rms_Proposals">
+        <MappingFragment StoreEntitySet="rms_Proposals">
+          <ScalarProperty Name="Proposal_ID" ColumnName="Proposal_ID" />
+          <ScalarProperty Name="ProposalCode" ColumnName="ProposalCode" />
+          <ScalarProperty Name="PrincipalInvestigator" ColumnName="PrincipalInvestigator" />
+          <ScalarProperty Name="ProposalTitle" ColumnName="ProposalTitle" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="RequestedBudget" ColumnName="RequestedBudget" />
+          <ScalarProperty Name="ChairmanApproval" ColumnName="ChairmanApproval" />
+          <ScalarProperty Name="ChairmanComments" ColumnName="ChairmanComments" />
+          <ScalarProperty Name="IsEvaluationCompleted" ColumnName="IsEvaluationCompleted" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Publications_ISI">
+      <EntityTypeMapping TypeName="RMSModel.rms_Publications_ISI">
+        <MappingFragment StoreEntitySet="rms_Publications_ISI">
+          <ScalarProperty Name="Publication_ISI_ID" ColumnName="Publication_ISI_ID" />
+          <ScalarProperty Name="ISICategory" ColumnName="ISICategory" />
+          <ScalarProperty Name="WOSNum" ColumnName="WOSNum" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="ConferenceTitle" ColumnName="ConferenceTitle" />
+          <ScalarProperty Name="ConferenceDates" ColumnName="ConferenceDates" />
+          <ScalarProperty Name="ConferenceLocation" ColumnName="ConferenceLocation" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="AuthorAddress" ColumnName="AuthorAddress" />
+          <ScalarProperty Name="ReprintAddress" ColumnName="ReprintAddress" />
+          <ScalarProperty Name="FundingAgnecy" ColumnName="FundingAgnecy" />
+          <ScalarProperty Name="FundingText" ColumnName="FundingText" />
+          <ScalarProperty Name="TimeCited" ColumnName="TimeCited" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="ISSN" ColumnName="ISSN" />
+          <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+          <ScalarProperty Name="PublicationMonth" ColumnName="PublicationMonth" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="WideCategory" ColumnName="WideCategory" />
+          <ScalarProperty Name="SubjectCategory" ColumnName="SubjectCategory" />
+          <ScalarProperty Name="ImpactFactorLastYear" ColumnName="ImpactFactorLastYear" />
+          <ScalarProperty Name="ImpactFactorPublicationYear" ColumnName="ImpactFactorPublicationYear" />
+          <ScalarProperty Name="QClass" ColumnName="QClass" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Publications_NonISI">
+      <EntityTypeMapping TypeName="RMSModel.rms_Publications_NonISI">
+        <MappingFragment StoreEntitySet="rms_Publications_NonISI">
+          <ScalarProperty Name="Publications_NonISI_ID" ColumnName="Publications_NonISI_ID" />
+          <ScalarProperty Name="DOI" ColumnName="DOI" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Researchers">
+      <EntityTypeMapping TypeName="RMSModel.rms_Researchers">
+        <MappingFragment StoreEntitySet="rms_Researchers">
+          <ScalarProperty Name="Researcher_ID" ColumnName="Researcher_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="AcademicRank" ColumnName="AcademicRank" />
+          <ScalarProperty Name="AdministrativeRank" ColumnName="AdministrativeRank" />
+          <ScalarProperty Name="ActualJob" ColumnName="ActualJob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WOSResearcherID" ColumnName="WOSResearcherID" />
+          <ScalarProperty Name="JoiningYear" ColumnName="JoiningYear" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_RIContributions">
+      <EntityTypeMapping TypeName="RMSModel.rms_RIContributions">
+        <MappingFragment StoreEntitySet="rms_RIContributions">
+          <ScalarProperty Name="RIContribution_ID" ColumnName="RIContribution_ID" />
+          <ScalarProperty Name="WOS" ColumnName="WOS" />
+          <ScalarProperty Name="RICenter" ColumnName="RICenter" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_ScientificTrips">
+      <EntityTypeMapping TypeName="RMSModel.rms_ScientificTrips">
+        <MappingFragment StoreEntitySet="rms_ScientificTrips">
+          <ScalarProperty Name="ScientificTrip_ID" ColumnName="ScientificTrip_ID" />
+          <ScalarProperty Name="TripNumber" ColumnName="TripNumber" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="PersonUndetookTrip" ColumnName="PersonUndetookTrip" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_ShortCourses">
+      <EntityTypeMapping TypeName="RMSModel.rms_ShortCourses">
+        <MappingFragment StoreEntitySet="rms_ShortCourses">
+          <ScalarProperty Name="ShortCourse_ID" ColumnName="ShortCourse_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Coordination" ColumnName="Coordination" />
+          <ScalarProperty Name="SectionPresidency" ColumnName="SectionPresidency" />
+          <ScalarProperty Name="CompensationTime" ColumnName="CompensationTime" />
+          <ScalarProperty Name="AverageCompensationTime" ColumnName="AverageCompensationTime" />
+          <ScalarProperty Name="TeachingHours" ColumnName="TeachingHours" />
+          <ScalarProperty Name="Incentives" ColumnName="Incentives" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Variations_Departments">
+      <EntityTypeMapping TypeName="RMSModel.rms_Variations_Departments">
+        <MappingFragment StoreEntitySet="rms_Variations_Departments">
+          <ScalarProperty Name="Variation_Department_ID" ColumnName="Variation_Department_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="OtherDeptarment" ColumnName="OtherDeptarment" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Variations_KFUPMIDs">
+      <EntityTypeMapping TypeName="RMSModel.rms_Variations_KFUPMIDs">
+        <MappingFragment StoreEntitySet="rms_Variations_KFUPMIDs">
+          <ScalarProperty Name="Variation_KFUPMID_ID" ColumnName="Variation_KFUPMID_ID" />
+          <ScalarProperty Name="CurrentKFUPMID" ColumnName="CurrentKFUPMID" />
+          <ScalarProperty Name="OtherKFUPMID" ColumnName="OtherKFUPMID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Variations_Names">
+      <EntityTypeMapping TypeName="RMSModel.rms_Variations_Names">
+        <MappingFragment StoreEntitySet="rms_Variations_Names">
+          <ScalarProperty Name="Variation_Name_ID" ColumnName="Variation_Name_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rms_Variations_Ranks">
+      <EntityTypeMapping TypeName="RMSModel.rms_Variations_Ranks">
+        <MappingFragment StoreEntitySet="rms_Variations_Ranks">
+          <ScalarProperty Name="Variation_Rank_ID" ColumnName="Variation_Rank_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="OtherRank" ColumnName="OtherRank" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RMSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDepartmentsByCollege" FunctionName="RMSModel.Store.GetDepartmentsByCollege" />
+    <FunctionImportMapping FunctionImportName="GetPublicationsByColelge" FunctionName="RMSModel.Store.GetPublicationsByColelge" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="RMSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_GetAllColleges" FunctionName="RMSModel.Store.sp_GetAllColleges">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetAllColleges_Result">
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetBooksByCollege" FunctionName="RMSModel.Store.sp_GetBooksByCollege">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetBooksByCollege_Result">
+          <ScalarProperty Name="Book_Authored_ID" ColumnName="Book_Authored_ID" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="FundingYear" ColumnName="FundingYear" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetBooksByFaculty" FunctionName="RMSModel.Store.sp_GetBooksByFaculty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetBooksByFaculty_Result">
+          <ScalarProperty Name="BooksAuthors_ID" ColumnName="BooksAuthors_ID" />
+          <ScalarProperty Name="BookNum" ColumnName="BookNum" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Contribution" ColumnName="Contribution" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Book_Authored_ID" ColumnName="Book_Authored_ID" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="FundingYear" ColumnName="FundingYear" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="isDeleted1" ColumnName="isDeleted1" />
+          <ScalarProperty Name="isActive1" ColumnName="isActive1" />
+          <ScalarProperty Name="CreatedBy1" ColumnName="CreatedBy1" />
+          <ScalarProperty Name="CreatedOn1" ColumnName="CreatedOn1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetDepartmentsByCollege" FunctionName="RMSModel.Store.sp_GetDepartmentsByCollege">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetDepartmentsByCollege_Result">
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetFacultyByCollege" FunctionName="RMSModel.Store.sp_GetFacultyByCollege">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetFacultyByCollege_Result">
+          <ScalarProperty Name="Researcher_ID" ColumnName="Researcher_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="AcademicRank" ColumnName="AcademicRank" />
+          <ScalarProperty Name="AdministrativeRank" ColumnName="AdministrativeRank" />
+          <ScalarProperty Name="ActualJob" ColumnName="ActualJob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WOSResearcherID" ColumnName="WOSResearcherID" />
+          <ScalarProperty Name="JoiningYear" ColumnName="JoiningYear" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetFacultyByDepartment" FunctionName="RMSModel.Store.sp_GetFacultyByDepartment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetFacultyByDepartment_Result">
+          <ScalarProperty Name="Researcher_ID" ColumnName="Researcher_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="AcademicRank" ColumnName="AcademicRank" />
+          <ScalarProperty Name="AdministrativeRank" ColumnName="AdministrativeRank" />
+          <ScalarProperty Name="ActualJob" ColumnName="ActualJob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WOSResearcherID" ColumnName="WOSResearcherID" />
+          <ScalarProperty Name="JoiningYear" ColumnName="JoiningYear" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetISIPublicationsByCollege" FunctionName="RMSModel.Store.sp_GetISIPublicationsByCollege">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetISIPublicationsByCollege_Result">
+          <ScalarProperty Name="Publication_ISI_ID" ColumnName="Publication_ISI_ID" />
+          <ScalarProperty Name="ISICategory" ColumnName="ISICategory" />
+          <ScalarProperty Name="WOSNum" ColumnName="WOSNum" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="ConferenceTitle" ColumnName="ConferenceTitle" />
+          <ScalarProperty Name="ConferenceDates" ColumnName="ConferenceDates" />
+          <ScalarProperty Name="ConferenceLocation" ColumnName="ConferenceLocation" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="AuthorAddress" ColumnName="AuthorAddress" />
+          <ScalarProperty Name="ReprintAddress" ColumnName="ReprintAddress" />
+          <ScalarProperty Name="FundingAgnecy" ColumnName="FundingAgnecy" />
+          <ScalarProperty Name="FundingText" ColumnName="FundingText" />
+          <ScalarProperty Name="TimeCited" ColumnName="TimeCited" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="ISSN" ColumnName="ISSN" />
+          <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+          <ScalarProperty Name="PublicationMonth" ColumnName="PublicationMonth" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="WideCategory" ColumnName="WideCategory" />
+          <ScalarProperty Name="SubjectCategory" ColumnName="SubjectCategory" />
+          <ScalarProperty Name="ImpactFactorLastYear" ColumnName="ImpactFactorLastYear" />
+          <ScalarProperty Name="ImpactFactorPublicationYear" ColumnName="ImpactFactorPublicationYear" />
+          <ScalarProperty Name="QClass" ColumnName="QClass" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetISIPublicationsByFaculty" FunctionName="RMSModel.Store.sp_GetISIPublicationsByFaculty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetISIPublicationsByFaculty_Result">
+          <ScalarProperty Name="Authors_ISI_ID" ColumnName="Authors_ISI_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="WOS" ColumnName="WOS" />
+          <ScalarProperty Name="NumberOfAuthors" ColumnName="NumberOfAuthors" />
+          <ScalarProperty Name="AuthorshipOrder" ColumnName="AuthorshipOrder" />
+          <ScalarProperty Name="PublicationPoints" ColumnName="PublicationPoints" />
+          <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+          <ScalarProperty Name="CorrespondingAuthor" ColumnName="CorrespondingAuthor" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Publication_ISI_ID" ColumnName="Publication_ISI_ID" />
+          <ScalarProperty Name="ISICategory" ColumnName="ISICategory" />
+          <ScalarProperty Name="WOSNum" ColumnName="WOSNum" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="ConferenceTitle" ColumnName="ConferenceTitle" />
+          <ScalarProperty Name="ConferenceDates" ColumnName="ConferenceDates" />
+          <ScalarProperty Name="ConferenceLocation" ColumnName="ConferenceLocation" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="AuthorAddress" ColumnName="AuthorAddress" />
+          <ScalarProperty Name="ReprintAddress" ColumnName="ReprintAddress" />
+          <ScalarProperty Name="FundingAgnecy" ColumnName="FundingAgnecy" />
+          <ScalarProperty Name="FundingText" ColumnName="FundingText" />
+          <ScalarProperty Name="TimeCited" ColumnName="TimeCited" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="ISSN" ColumnName="ISSN" />
+          <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+          <ScalarProperty Name="PublicationMonth" ColumnName="PublicationMonth" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="WideCategory" ColumnName="WideCategory" />
+          <ScalarProperty Name="SubjectCategory" ColumnName="SubjectCategory" />
+          <ScalarProperty Name="ImpactFactorLastYear" ColumnName="ImpactFactorLastYear" />
+          <ScalarProperty Name="ImpactFactorPublicationYear" ColumnName="ImpactFactorPublicationYear" />
+          <ScalarProperty Name="QClass" ColumnName="QClass" />
+          <ScalarProperty Name="isDeleted1" ColumnName="isDeleted1" />
+          <ScalarProperty Name="isActive1" ColumnName="isActive1" />
+          <ScalarProperty Name="CreatedBy1" ColumnName="CreatedBy1" />
+          <ScalarProperty Name="CreatedOn1" ColumnName="CreatedOn1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetNonISIPublicationsByCollege" FunctionName="RMSModel.Store.sp_GetNonISIPublicationsByCollege">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetNonISIPublicationsByCollege_Result">
+          <ScalarProperty Name="Publications_NonISI_ID" ColumnName="Publications_NonISI_ID" />
+          <ScalarProperty Name="DOI" ColumnName="DOI" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetNonISIPublicationsByFaculty" FunctionName="RMSModel.Store.sp_GetNonISIPublicationsByFaculty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_GetNonISIPublicationsByFaculty_Result">
+          <ScalarProperty Name="Authors_NonISI_ID" ColumnName="Authors_NonISI_ID" />
+          <ScalarProperty Name="KFUPMID" ColumnName="KFUPMID" />
+          <ScalarProperty Name="DOI" ColumnName="DOI" />
+          <ScalarProperty Name="CorrespondingAuthor" ColumnName="CorrespondingAuthor" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Publications_NonISI_ID" ColumnName="Publications_NonISI_ID" />
+          <ScalarProperty Name="DOI1" ColumnName="DOI1" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Remarks1" ColumnName="Remarks1" />
+          <ScalarProperty Name="isDeleted1" ColumnName="isDeleted1" />
+          <ScalarProperty Name="isActive1" ColumnName="isActive1" />
+          <ScalarProperty Name="CreatedBy1" ColumnName="CreatedBy1" />
+          <ScalarProperty Name="CreatedOn1" ColumnName="CreatedOn1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RMSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="RMSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RMSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_SummaryAll" FunctionName="RMSModel.Store.sp_SummaryAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_SummaryAll_Result">
+          <ScalarProperty Name="ISI_Publications" ColumnName="ISI Publications" />
+          <ScalarProperty Name="NonISI_Publications" ColumnName="NonISI Publications" />
+          <ScalarProperty Name="Publication_Points" ColumnName="Publication Points" />
+          <ScalarProperty Name="Books" ColumnName="Books" />
+          <ScalarProperty Name="Conferences" ColumnName="Conferences" />
+          <ScalarProperty Name="Patents" ColumnName="Patents" />
+          <ScalarProperty Name="Projects" ColumnName="Projects" />
+          <ScalarProperty Name="Project_Funds" ColumnName="Project_Funds" />
+          <ScalarProperty Name="Short_Course_Funds" ColumnName="Short_Course_Funds" />
+          <ScalarProperty Name="Graduate_Students" ColumnName="Graduate_Students" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SummaryByFaculty" FunctionName="RMSModel.Store.sp_SummaryByFaculty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.sp_SummaryByFaculty_Result">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Conferences" ColumnName="Conferences" />
+          <ScalarProperty Name="Books" ColumnName="Books" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RMSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SummaryAll" FunctionName="RMSModel.Store.SummaryAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.SummaryAll_Result">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Conferences" ColumnName="Conferences" />
+          <ScalarProperty Name="Books" ColumnName="Books" />
+          <ScalarProperty Name="ISI_Publications" ColumnName="ISI_Publications" />
+          <ScalarProperty Name="NonISI_Publications" ColumnName="NonISI_Publications" />
+          <ScalarProperty Name="Graduate_Students" ColumnName="Graduate_Students" />
+          <ScalarProperty Name="Projects" ColumnName="Projects" />
+          <ScalarProperty Name="Project_Funds" ColumnName="Project_Funds" />
+          <ScalarProperty Name="Patents" ColumnName="Patents" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SummaryByFaculty" FunctionName="RMSModel.Store.SummaryByFaculty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMSModel.SummaryByFaculty_Result">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Conferences" ColumnName="Conferences" />
+          <ScalarProperty Name="Books" ColumnName="Books" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
